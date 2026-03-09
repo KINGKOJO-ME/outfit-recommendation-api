@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import ClothingItem
+from .serializers import ClothingItemSerializer
 
-# Create your views here.
+class ClothingItemViewSet(viewsets.ModelViewSet):
+    queryset = ClothingItem.objects.all()
+    serializer_class = ClothingItemSerializer
